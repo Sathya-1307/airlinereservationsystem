@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airline Ticket Reservation</title>
+    <link rel="stylesheet" href="style2.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Airline Ticket Reservation System</h1>
+
+        <!-- Book Ticket -->
+        <div class="form">
+            <h2>Book a New Ticket</h2>
+            <label for="flightId">Flight ID:</label>
+            <input type="text" id="flightId" required>
+            <br>
+            <label for="passengerId">Passenger ID:</label>
+            <input type="text" id="passengerId" required>
+            <br>
+            <label for="seatType">Seat Type:</label>
+            <select id="seatType" onchange="updatePrice()">
+                <option value="window">Window</option>
+                <option value="middle">Middle</option>
+                <option value="aisle">Aisle</option>
+            </select>
+            <br>
+            <label for="classType">Class:</label>
+            <select id="classType" onchange="updatePrice()">
+                <option value="economy">Economy</option>
+                <option value="business">Business</option>
+            </select>
+            <br>
+            <h3>Price: $<span id="ticketPrice">0</span></h3>
+            <button onclick="bookTicket()">Book Ticket</button>
+        </div>
+
+        <!-- All Tickets -->
+        <div class="tickets">
+            <h2>All Tickets</h2>
+            <button onclick="getAllTickets()">Refresh Ticket List</button>
+            <ul id="ticketList"></ul>
+        </div>
+		
+		
+		<div id="ticketSection">
+		    <h2>Ticket Details</h2> 
+		    <input type="number" id="ticketId" placeholder="Enter Ticket ID"> 
+		    <button onclick="getTicketById()">Get Ticket</button>
+		</div>
+
+		<div id="ticketDetailsContainer"></div>
+
+        <!-- Update Ticket -->
+        <div class="updateForm">
+            <h2>Update Ticket</h2>
+            <input type="number" id="updateTicketId" placeholder="Ticket ID">
+            <br>
+            <label for="updatePrice">New Price:</label>
+            <input type="number" id="updatePrice" placeholder="New Ticket Price">
+            <br>
+            <button onclick="updateTicket()">Update Ticket</button>
+        </div>
+
+        <!-- Cancel Ticket -->
+        <div class="cancelForm">
+            <h2>Cancel Ticket</h2>
+            <input type="number" id="cancelTicketId" placeholder="Enter Ticket ID to Cancel">
+            <button onclick="cancelTicket()">Cancel Ticket</button>
+        </div>
+
+        <div id="paymentButtonContainer"></div>
+    </div>
+    <script src="script2.js"></script>
+</body>
+</html>

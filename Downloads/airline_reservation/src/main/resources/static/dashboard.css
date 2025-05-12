@@ -1,0 +1,117 @@
+/* Global Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #f4f4f9;
+}
+
+/* Navbar */
+.navbar {
+    width: 100%;
+    background: #007BFF;
+    color: white;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+}
+
+.navbar h1 {
+    margin-left: 20px;
+    font-size: 22px;
+}
+
+.navbar button {
+    background: #ff4d4d;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: 0.3s;
+}
+
+.navbar button:hover {
+    background: #e63939;
+}
+
+/* Dashboard Content */
+.dashboard-container {
+    text-align: center;
+    width: 90%;
+    margin-top: 30px;
+}
+
+/* Dashboard Cards */
+.dashboard-cards {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+    width: 250px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+/* Profile Modal */
+.profile-container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: linear-gradient(135deg, #007BFF, #00c6ff);
+    color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 8px 24px rgba(0,0,0,0.3);
+    width: 320px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+.profile-container h2 {
+    margin-bottom: 15px;
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.profile-container p {
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.profile-container button {
+    padding: 10px;
+    width: 100%;
+    background-color: #ff4d4d;
+    border: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.profile-container button:hover {
+    background-color: #e63939;
+}
+
+/* Smooth Fade-in Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translate(-50%, -60%); }
+    to { opacity: 1; transform: translate(-50%, -50%); }
+}

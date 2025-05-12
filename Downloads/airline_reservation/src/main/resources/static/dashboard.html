@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Airline Reservation - Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <h1>✈️ Airline Reservation System</h1>
+        <button onclick="logout()">Logout</button>
+    </nav>
+
+    <!-- Dashboard Content -->
+    <main class="dashboard-container">
+        <h2>Welcome, <span id="username"></span>!</h2>
+        <p>Explore your options below.</p>
+
+        <div class="dashboard-cards">
+            <div class="card" onclick="bookFlight()">
+                <h3>📅 Book a Flight</h3>
+                <p>Reserve your next flight effortlessly.</p>
+            </div>
+            <div class="card" onclick="viewBookings()">
+                <h3>✈️ Manage Bookings</h3>
+                <p>View, update, or cancel tickets.</p>
+            </div>
+            <div class="card" onclick="profile()">
+                <h3>👤 My Profile</h3>
+                <p>View account details securely.</p>
+            </div>
+        </div>
+    </main>
+
+    <script src="dashboard.js"></script>
+
+</body>
+</html>

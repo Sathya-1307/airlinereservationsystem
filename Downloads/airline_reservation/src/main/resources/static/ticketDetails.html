@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ticket Details</title>
+</head>
+<body>
+    <h1>Ticket Details</h1>
+    <div id="ticketInfo">Loading...</div>
+
+    <script>
+        const apiUrl = 'http://localhost:8080/tickets';
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const ticketId = sessionStorage.getItem("selectedTicketId");
+
+            if (!ticketId) {
+                document.getElementById("ticketInfo").innerText = "❌ No ticket selected!";
+                return;
+            }
+
+            fetch(`${apiUrl}/${ticketId}`)
+                .then(response => {
+                    if (!response.ok) throw new Error("Ticket not found");
+                    return response.json();
+                })
+                .then(data => {
+                    document.getElementById("ticketInfo").innerHTML = `
+                        <p><strong>Ticket ID:</strong> ${data.id}</p>
+                        <p><strong>Flight ID:</strong> ${data.flightId}</p>
+                        <p><strong>Passenger ID:</strong> ${data.passengerId}</p>
+                        <p><strong>Seat Type:</strong> ${data.seatType}</p>
+                        <p><strong>Class:</strong> ${data.classType}</p>
+                        <p><strong>Price:</strong> $${data.price}</p>
+                        <p><strong>Booking Time:</strong> ${data.bookingTime}</p>
+                    `;
+                })
+                .catch(error => {
+                    document.getElementById("ticketInfo").innerText = "❌ Ticket not found.";
+                    console.error("Error:", error);
+                });
+        });
+    </script>
+</body>
+</html>

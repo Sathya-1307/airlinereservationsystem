@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Airline Reservation - Flights</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Available Flights</h1>
+    <table id="flightTable">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Airline</th>
+                <th>Source</th>
+                <th>Destination</th>
+                <th>Departure</th>
+                <th>Arrival</th>
+                <th>Price</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <h2>Add Flight</h2>
+    <form id="flightForm">
+        <input type="text" id="airline" placeholder="Airline" required />
+        <input type="text" id="source" placeholder="Source" required />
+        <input type="text" id="destination" placeholder="Destination" required />
+        <input type="datetime-local" id="departureTime" required />
+        <input type="datetime-local" id="arrivalTime" required />
+        <input type="number" id="price" placeholder="Price" required />
+        <button type="submit">Add Flight</button>
+    </form>
+
+    <script src="script.js"></script>
+</body>
+</html>
